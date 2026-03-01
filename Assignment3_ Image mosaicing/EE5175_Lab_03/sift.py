@@ -49,11 +49,6 @@ def sift(img1, img2):
 def show_correspondences(img1, img2, correspondences):
     """
     Visualizes point correspondences by drawing lines between matched points.
-
-    Args:
-        img1 (np.array): Query image
-        img2 (np.array): Target image
-        correspondences (np.array): 2 x N x 2 array from your sift function
     """
     h1, w1 = img1.shape[:2]
     h2, w2 = img2.shape[:2]
@@ -134,17 +129,17 @@ def calculate_homography(pts1, pts2):
     return H
 
 def find_homography_ransac(correspondences, epsilon=10):
-    """
-    Implements the specific RANSAC algorithm provided.
-    """
+  
     # points[0] are img1 (source), points[1] are img2 (target)
-    pts1 = correspondences[0]
-    pts2 = correspondences[1]
-    num_pts = pts1.shape[0]
+    # so that I2 = H * I1
+
+    pts1 =correspondences[0]
+    pts2 =correspondences[1]
+    num_pts =pts1.shape[0]
     
-    # Target size for consensus: 80% of remaining points
-    # Step (e): d = 0.8 * |P| where |P| = total - 4
-    d = 0.8 * (num_pts - 4)
+
+    # this denotes the threshold for consesus set = 0.8 * (M-4) where m is the whole set
+    d =0.8*(num_pts - 4)
 
     while True:
         # (b) Randomly pick four correspondences
@@ -188,9 +183,6 @@ def find_homography_ransac(correspondences, epsilon=10):
             return H
         
 
-
-
-import numpy as np
 
 def create_mosaic(img1, img2, img3, H21, H23):
     # 1. Determine the size of the full mosaic
