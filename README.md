@@ -7,7 +7,7 @@ python stitching.py
 
 ```
 
-Please comment the mentioned lines in stitching.py to see the rerults for custom images and given assignment images
+Please comment the mentioned lines in stitching.py to see the results for camera images and given assignment images
 
 or run the jupyter notebook from root directory or clone this [git repo](https://github.com/aayush-ranawat/Image_Signal_Processin.git)
 
