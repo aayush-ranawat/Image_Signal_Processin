@@ -5,7 +5,7 @@ from sift import *
 
 img_1 , img_2 , img_3 = cv2.imread(r"img1.png") , cv2.imread(r"img2.png") ,cv2.imread(r"img3.png")
 
-# img_1 , img_2 , img_3 = cv2.imread(r"img170.jpg",cv2.IMREAD_GRAYSCALE) , cv2.imread(r"img210.jpg",cv2.IMREAD_GRAYSCALE) ,cv2.imread(r"img240.jpg",cv2.IMREAD_GRAYSCALE)
+img_1 , img_2 , img_3 = cv2.imread(r"img170.jpg",cv2.IMREAD_GRAYSCALE) , cv2.imread(r"img210.jpg",cv2.IMREAD_GRAYSCALE) ,cv2.imread(r"img240.jpg",cv2.IMREAD_GRAYSCALE)
 
 img_1,img_2,img_3=cv2.resize(img_1,(640,360)) , cv2.resize(img_2,(640,360)) ,cv2.resize(img_3,(640,360))
 
@@ -19,7 +19,7 @@ correspondance_21= sift(img_2,img_1)
 correspondance_23= sift(img_2,img_3)
 
 
-print("correspondance found")
+print(f"correspondance found {correspondance_21}")
 
 
 
